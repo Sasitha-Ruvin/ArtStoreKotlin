@@ -1,8 +1,8 @@
 package com.example.valyrianvisions.model
 
 data class User(
-    val username: String,
-    val password: String,
-    val email: String,
-    val contact: String
+    var username: String,
+    var password: String,
+    var email: String,
+    var contact: String
 )

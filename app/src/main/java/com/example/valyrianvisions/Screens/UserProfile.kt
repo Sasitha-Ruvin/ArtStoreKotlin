@@ -7,6 +7,7 @@ import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
+import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.animateDpAsState
@@ -56,20 +57,15 @@ fun UserProfile(
     authViewModel: AuthViewModel,
     cartViewModel: CartViewModel,
     wishListViewModel: WishListViewModel,
-
     userProfileViewModel: UserProfileViewModel
 ) {
     var isEditMode by remember { mutableStateOf(false) }
     val userProfile = userProfileViewModel.userProfile.value
     val authState by authViewModel.authstate.observeAsState()
     var isLoading by remember { mutableStateOf(true) }
-    var username by remember { mutableStateOf(userProfile.username) }
-    var password by remember { mutableStateOf(userProfile.password) }
-    var email by remember { mutableStateOf(userProfile.email) }
-    var contact by remember { mutableStateOf(userProfile.contact) }
-    var startAnimation by remember{ mutableStateOf(false) }
+    var startAnimation by remember { mutableStateOf(false) }
 
-    // Profile image bitmap
+    // Profile image bitmap from ViewModel
     val profileImageBitmap by userProfileViewModel.profileImageBitmap
 
     val context = LocalContext.current
@@ -86,11 +82,11 @@ fun UserProfile(
         }
     }
 
-    LaunchedEffect(Unit)
-    {
+    LaunchedEffect(Unit) {
         delay(1500)
         isLoading = false
     }
+
     LaunchedEffect(Unit) {
         startAnimation = true
     }
@@ -122,21 +118,26 @@ fun UserProfile(
         }
     )
 
-    if(isLoading){
+    if (isLoading) {
         LoadingCircle()
-    }else{
-        ScreenWithTopBarAndBottomNav(navController = navController ,
+    } else {
+        ScreenWithTopBarAndBottomNav(navController = navController,
             showbackButton = false,
             cartViewModel = cartViewModel,
-            wishListViewModel = wishListViewModel )
-        {
+            wishListViewModel = wishListViewModel
+        ) {
             Scaffold(
                 floatingActionButton = {
                     FloatingActionButton(
                         onClick = {
                             if (isEditMode) {
                                 coroutineScope.launch {
-                                    userProfileViewModel.updateUserData(username, password, email, contact)
+                                    userProfileViewModel.updateUserData(
+                                        userProfile.username,
+                                        userProfile.password,
+                                        userProfile.email,
+                                        userProfile.contact
+                                    )
                                 }
                             }
                             isEditMode = !isEditMode
@@ -204,25 +205,49 @@ fun UserProfile(
 
                         // User Info
                         Text(
-                            text = username,
+                            text = userProfile.username,
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold
                         )
 
                         Spacer(modifier = Modifier.height(20.dp))
 
-                        Column(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .background(
-                                    MaterialTheme.colorScheme.primaryContainer,
-                                    shape = RoundedCornerShape(16.dp)
-                                )
-                        ) {
-                            UserInfoField(label = "Username", value = username, isEditMode = isEditMode, onValueChange = { username = it })
-                            UserInfoField(label = "Password", value = password, isEditMode = isEditMode, onValueChange = { password = it })
-                            UserInfoField(label = "Email", value = email, isEditMode = isEditMode, onValueChange = { email = it })
-                            UserInfoField(label = "Contact", value = contact, isEditMode = isEditMode, onValueChange = { contact = it })
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            // Username Field
+                            UserInfoField(
+                                label = "Username",
+                                value = userProfile.username,
+                                isEditMode = isEditMode
+                            ) { newValue ->
+                                userProfile.username = newValue
+                            }
+
+                            // Email Field
+                            UserInfoField(
+                                label = "Email",
+                                value = userProfile.email,
+                                isEditMode = isEditMode
+                            ) { newValue ->
+                                userProfile.email = newValue
+                            }
+
+                            // Contact Field
+                            UserInfoField(
+                                label = "Contact",
+                                value = userProfile.contact,
+                                isEditMode = isEditMode
+                            ) { newValue ->
+                                userProfile.contact = newValue
+                            }
+
+                            // Password Field
+                            UserInfoField(
+                                label = "Password",
+                                value = userProfile.password,
+                                isEditMode = isEditMode
+                            ) { newValue ->
+                                userProfile.password = newValue
+                            }
                         }
 
                         Spacer(modifier = Modifier.height(16.dp))
@@ -251,7 +276,6 @@ fun UserProfile(
                     }
                 }
             )
-
         }
     }
 
@@ -312,10 +336,11 @@ fun uriToBitmap(uri: Uri, contentResolver: ContentResolver): Bitmap? {
             MediaStore.Images.Media.getBitmap(contentResolver, uri)
         }
     } catch (e: IOException) {
-        e.printStackTrace()
+        Log.e("UserProfile", "Error decoding image", e)
         null
     }
 }
+
 
 @Composable
 fun UserInfoField(label: String, value: String, isEditMode: Boolean, onValueChange: (String) -> Unit) {
