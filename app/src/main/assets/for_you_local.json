@@ -1,0 +1,17 @@
+[
+  {
+    "imageUrl": "file:///android_asset/images/knight.jpg",
+    "name": "Knight & Companion",
+    "price": 25.99
+  },
+  {
+    "imageUrl": "file:///android_asset/images/image3.jpg",
+    "name": "Yellow Sun",
+    "price": 35.99
+  },
+  {
+    "imageUrl": "file:///android_asset/images/image2.jpg",
+    "name": "Castle By Lake",
+    "price": 45.99
+  }
+]
