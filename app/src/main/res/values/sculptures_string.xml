@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sculpture1">The Pensive Figure</string>
+    <string name="sculpture1_desc">A contemplative sculpture of a seated man, his head bowed and his hands clasped. The elongated form and smooth surface create a sense of elegance and introspection. The figures posture suggests deep thought or perhaps a moment of grief, evoking a sense of quiet solitude.</string>
+    <string name="sculpture1_price">$15</string>
+
+    <string name="sculpture2">Oceans Embrace</string>
+    <string name="sculpture2_desc">A graceful mermaid emerges from the depths, her flowing hair and shimmering scales catching the light. Her eyes are closed in a moment of pure bliss as she basks in the oceans embrace.</string>
+    <string name="sculpture2_price">$15</string>
+
+
+    <string name="sculpture3">Garden Guardian</string>
+    <string name="sculpture3_desc">A serene, winged fairy kneels amidst a bed of vibrant flowers, her delicate fingers gently touching a blooming rose. Her ethereal form, adorned with a flowing gown and a wreath of wildflowers, exudes a sense of peace and harmony. </string>
+    <string name="sculptur3_price">$15</string>
+
+    <string name="sculpture4">Wild Horizons</string>
+    <string name="sculpture4_desc">A dynamic bronze sculpture depicting a herd of wild horses in motion. The horses leap and race across a circular base, their forms etched with intricate detail. The base itself features a textured, earthy surface that suggests a rugged landscape.</string>
+    <string name="sculpture4_price">$15</string>
+
+    <string name="sculpture5"> Winged Triumph</string>
+    <string name="sculpture5_desc">A headless statue of Nike, the Greek goddess of victory, stands tall with outstretched wings. Her flowing robes and dynamic pose convey a sense of triumph and movement. The statues white marble finish adds a timeless and elegant quality to the piece.</string>
+    <string name="sculpture5_price">$15</string>
+
+    <string name="sculpture6">Dancing Wind</string>
+    <string name="sculpture6_desc">A graceful bronze statue of a woman dancing in a flowing white dress. The wind seems to catch the fabric, creating a dynamic and ethereal effect. Her pose suggests freedom and joy, making the statue a perfect addition to any outdoor space.</string>
+    <string name="sculpture6_price">$15</string>
+</resources>

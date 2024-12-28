@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">ValyrianVisions</string>
+    <string name="LoadScreenButtonText">Get Started</string>
+    <string name="LoginWelcome">Welcome Back</string>
+    <string name="immerse_in_art">Immerse in Art</string>
+    <string name="offertext">Enjoy 20% Off Featured Artworks</string>
+    <string name="SignUpText">Create Your Account</string>
+    <string name="sign_up_button">Sign Up</string>
+//Featured Products
+    <string name="featured_product1_name">The Waves</string>
+    <string name="product1_price">15$</string>
+
+    <string name="featured_product2_name">Sunset</string>
+    <string name="product2_price">20$</string>
+
+    <string name="featured_product3_name">The Trooper</string>
+    <string name="product3_price">12$</string>
+
+    <string name="featured_product4_name">A City</string>
+    <string name="product4_price">15$</string>
+
+    <string name="featured_product5_name">The Samurai</string>
+    <string name="product5_price">15$</string>
+
+    <string name="featured_product6_name">The Ship</string>
+    <string name="product6_price">15$</string>
+    <string name="product_image">product_image</string>
+
+//Top Artists
+    <string name="artist_1">John Doe</string>
+    <string name="artist_2">Jane Doe</string>
+    <string name="artist_3">Micheal Jordan</string>
+    <string name="artist_4">John Carter</string>
+    <string name="artist_5">Lisa McMillan</string>
+    <string name="artist_6">Richard Smith</string>
+
+
+
+    <string name="featured_artists">Featured Artists</string>
+    <string name="categories">Categories</string>
+
+//Paintings
+    <string name="painting_1">Astronaut</string>
+    <string name="painting_1_description">In this cosmic tableau, an intrepid astronaut stands resolute upon the barren lunar surface. The moon, a monochromatic canvas of grays and ashen whites, stretches out beneath their sturdy boots. Their spacesuit, a symphony of form and function, clings to their silhouette—a protective cocoon against the void.</string>
+    <string name="painting_1_price">$20</string>
+
+    <string name="painting_2">Geometric Gaze</string>
+    <string name="painting_2_description">This striking image portrays a feline subject in a bold, cubist style. The cats form is composed of geometric shapes, each meticulously colored in a palette of blues, greens, and beige</string>
+    <string name="painting_2_price">$20</string>
+
+    <string name="painting_3">Celestial Sentinel</string>
+    <string name="painting_3_description">This captivating image depicts a feline figure set against a backdrop of celestial wonders. The cat, adorned with a collar and a third eye, gazes out with an air of wisdom and serenity.</string>
+    <string name="painting_3_price">$25</string>
+
+    <string name="painting_4">Solitary Reverie</string>
+    <string name="painting_4_description">This evocative painting presents a surreal and dreamlike scene. A solitary figure, silhouetted against a vibrant sunset, sits on a swing suspended within the antlers of a majestic deer.</string>
+    <string name="painting_4_price">$18</string>
+
+    <string name="painting_5">Mystic Harmony</string>
+    <string name="painting_5_description"> This vibrant and intricate painting portrays a womans face juxtaposed with the image of a wolf. The womans gaze is both serene and enigmatic, while the wolfs intense stare suggests a primal connection to nature.</string>
+    <string name="painting_5_price">$15</string>
+
+    <string name="painting_6">Serene Solitude</string>
+    <string name="painting_6_description">This evocative painting depicts a solitary figure swinging from a tree branch against a backdrop of a fiery sunset. The silhouette of the figure, bathed in the warm glow of the orange and yellow hues, creates a sense of peace and tranquility. </string>
+    <string name="painting_6_price">$20</string>
+    <string name="new_events">New Events</string>
+    <string name="removeBtn">Remove</string>
+    <string name="clearBtn">Clear</string>
+    <string name="buyBtn">Buy</string>
+</resources>

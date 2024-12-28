@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "452890208422",
+    "project_id": "valyrian-visions",
+    "storage_bucket": "valyrian-visions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452890208422:android:9726909f42b8c39387ec67",
+        "android_client_info": {
+          "package_name": "com.example.valyrianvisions"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9zp2Td1WgWRnY4Ezsy65lpaEcE09d1bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

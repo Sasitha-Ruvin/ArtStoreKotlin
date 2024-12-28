@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="event_1">Discovering Malta’s Baroque Secrets</string>
+    <string name="event_2">Ethereal Expressions: A Journey Through Art</string>
+    <string name="event_3">Modern Sculptures Unveiled</string>
+    <string name="event_type1">Exhibition</string>
+    <string name="event_date1">Sep 13th - Sep 16th 2024</string>
+    <string name="event_date2">Sep 25th - Sep 30th 2024</string>
+</resources>

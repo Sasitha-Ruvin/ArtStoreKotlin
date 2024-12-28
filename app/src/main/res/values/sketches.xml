@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sketch_1">Chaotic Carnival</string>
+    <string name="sketch_1_desc"> A dark, gritty aesthetic inspired by the Jokers chaotic and unpredictable nature. It often features bold lines, dramatic shadows, and a sense of impending chaos. Think carnival masks, twisted smiles, and a hint of madness.</string>
+    <string name="sketch_1_price">$16</string>
+
+    <string name="sketch_2">Ephemeral Elegance</string>
+    <string name="sketch2_desc"> A delicate sketch of a woman, her back adorned with a vibrant tapestry of butterflies. The juxtaposition of the grayscale figure against the colorful, fluttering insects creates a striking contrast, symbolizing the ephemeral nature of beauty and the freedom of the soul.</string>
+    <string name="sketch_2_price">$15</string>
+
+    <string name="sketch_3">Golden Gaze"</string>
+    <string name="sketch3_desc">A captivating portrait of a golden retriever, rendered in delicate graphite strokes. The dogs soulful eyes and gentle expression convey a sense of warmth and loyalty. The artists attention to detail is evident in the fur texture and the subtle shading, creating a lifelike image of this beloved companion.</string>
+    <string name="sketch_3_price">$15</string>
+
+    <string name="sketch_4">Masked Mortality</string>
+    <string name="sketch4_desc">A haunting sketch of a woman, her face partially obscured by a skull. The contrast between the ethereal beauty of her features and the stark reality of the skull beneath creates a powerful and unsettling image. The piece invites contemplation on the inevitability of death and the fragility of human existence.</string>
+    <string name="sketch_4_price">$15</string>
+    
+    <string name="sketch_5">Twisted Titans</string>
+    <string name="sketch_5_desc">A stark, minimalist sketch of two gnarled trees, their branches reaching out like skeletal fingers against a muted backdrop. The composition evokes a sense of ancient wisdom and resilience, as the trees stand tall and unwavering despite the ravages of time.</string>
+    <string name="sketch_5_price">$15</string>
+
+    <string name="sketch_6">Inner Vision</string>
+    <string name="sketch_6_desc">A captivating charcoal drawing of an eye, within which a dense forest and a flock of birds are intricately depicted. This surreal imagery suggests a deep connection to nature and a rich inner world. The contrast between the dark, detailed forest and the stark white of the eye creates a visually striking composition.</string>
+    <string name="sketch_6_price">$15</string>
+</resources>
