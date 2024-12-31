@@ -49,11 +49,13 @@ import com.example.valyrianvisions.Authentications.AuthState
 import com.example.valyrianvisions.Authentications.AuthViewModel
 import com.example.valyrianvisions.CommonComps.ForYouProduct
 import com.example.valyrianvisions.CommonComps.LatestProductList
+import com.example.valyrianvisions.CommonComps.ProdcutCards.FeaturedRow
 import com.example.valyrianvisions.R
 import com.example.valyrianvisions.CommonComps.ScreenWithTopBarAndBottomNav
 import com.example.valyrianvisions.CommonComps.SearchBar
 import com.example.valyrianvisions.CommonComps.ProdcutCards.SwipeableEventSlideshow
 import com.example.valyrianvisions.CommonComps.SectionsText
+import com.example.valyrianvisions.ViewModels.FeaturedProductViewModel
 import com.example.valyrianvisions.ViewModels.ForYouProductsViewModel
 import com.example.valyrianvisions.ViewModels.LatestProductsViewModel
 import com.example.valyrianvisions.ViewModels.WishListViewModel
@@ -82,6 +84,7 @@ fun HomeScreen(
     var isLoading by remember { mutableStateOf(true) }
 
     val latestProductsViewModel = LatestProductsViewModel();
+    val featuredViewModel = remember { FeaturedProductViewModel() }
     val forYouProductsViewModel = ForYouProductsViewModel(LocalContext.current.applicationContext as Application)
 
     LaunchedEffect(Unit) {
@@ -146,8 +149,10 @@ fun HomeScreen(
                                 ForYouProduct(viewModel = forYouProductsViewModel, navController = navController)
                                 Spacer(modifier = Modifier.height(16.dp))
                                 SectionsText("Featured", navigateTo = "products", navController)
+                                FeaturedRow(navController = navController, viewModel = featuredViewModel)
+
+
                                 Spacer(modifier = Modifier.height(10.dp))
-                                FeaturedProductList(pictureList = DataSource().loadPictures(), navController = navController)
                                 Spacer(modifier = Modifier.height(25.dp))
                                 SectionsText("Latest", navigateTo = "products", navController)
                                 Spacer(modifier = Modifier.height(10.dp))
@@ -206,73 +211,73 @@ fun ImageWithOverlay() {
     }
 }
 
-//Featured Product section Text
-@Composable
-fun FeaturedText(navController: NavController) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Text(
-            text = "Featured",
-            fontSize = 20.sp,
-            style = MaterialTheme.typography.bodyMedium.copy(
-                color = MaterialTheme.colorScheme.onBackground,
-                fontWeight = FontWeight.Bold
-            )
-        )
-        Spacer(modifier = Modifier.weight(1f))
-        TextButton(
-            onClick = { navController.navigate("products") },
-            modifier = Modifier.align(Alignment.CenterVertically)
-        ) {
-            Text(
-                text = "Show more",
-                style = MaterialTheme.typography.bodyMedium.copy(
-                    color = Color.Gray,
-                    fontWeight = FontWeight.Bold
-                ),
-                fontSize = 15.sp
-            )
-        }
-    }
-}
-
-@Composable
-fun LatestText(navController: NavController){
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ){
-        Text(
-            text = "Latest",
-            fontSize = 20.sp,
-            style = MaterialTheme.typography.bodyMedium.copy(
-                color = MaterialTheme.colorScheme.onBackground,
-                fontWeight = FontWeight.Bold
-            )
-        )
-        Spacer(modifier = Modifier.weight(1f))
-        TextButton(
-            onClick = { navController.navigate("products") },
-            modifier = Modifier.align(Alignment.CenterVertically)
-        ) {
-            Text(
-                text = "Show more",
-                style = MaterialTheme.typography.bodyMedium.copy(
-                    color = Color.Gray,
-                    fontWeight = FontWeight.Bold
-                ),
-                fontSize = 15.sp
-            )
-        }
-    }
-
-}
+////Featured Product section Text
+//@Composable
+//fun FeaturedText(navController: NavController) {
+//    Row(
+//        modifier = Modifier
+//            .fillMaxWidth()
+//            .padding(horizontal = 16.dp),
+//        verticalAlignment = Alignment.CenterVertically
+//    ) {
+//        Text(
+//            text = "Featured",
+//            fontSize = 20.sp,
+//            style = MaterialTheme.typography.bodyMedium.copy(
+//                color = MaterialTheme.colorScheme.onBackground,
+//                fontWeight = FontWeight.Bold
+//            )
+//        )
+//        Spacer(modifier = Modifier.weight(1f))
+//        TextButton(
+//            onClick = { navController.navigate("products") },
+//            modifier = Modifier.align(Alignment.CenterVertically)
+//        ) {
+//            Text(
+//                text = "Show more",
+//                style = MaterialTheme.typography.bodyMedium.copy(
+//                    color = Color.Gray,
+//                    fontWeight = FontWeight.Bold
+//                ),
+//                fontSize = 15.sp
+//            )
+//        }
+//    }
+//}
+//
+//@Composable
+//fun LatestText(navController: NavController){
+//    Row(
+//        modifier = Modifier
+//            .fillMaxWidth()
+//            .padding(horizontal = 16.dp),
+//        verticalAlignment = Alignment.CenterVertically
+//    ){
+//        Text(
+//            text = "Latest",
+//            fontSize = 20.sp,
+//            style = MaterialTheme.typography.bodyMedium.copy(
+//                color = MaterialTheme.colorScheme.onBackground,
+//                fontWeight = FontWeight.Bold
+//            )
+//        )
+//        Spacer(modifier = Modifier.weight(1f))
+//        TextButton(
+//            onClick = { navController.navigate("products") },
+//            modifier = Modifier.align(Alignment.CenterVertically)
+//        ) {
+//            Text(
+//                text = "Show more",
+//                style = MaterialTheme.typography.bodyMedium.copy(
+//                    color = Color.Gray,
+//                    fontWeight = FontWeight.Bold
+//                ),
+//                fontSize = 15.sp
+//            )
+//        }
+//    }
+//
+//}
 
 
 
