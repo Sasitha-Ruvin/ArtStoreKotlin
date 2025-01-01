@@ -17,7 +17,7 @@ object FirebaseRepository {
             println("Raw snapshot: ${snapshot.value}")
             snapshot.children.mapNotNull { it.getValue(FeaturedProduct::class.java) }
         } catch (e: Exception) {
-            // Log the exception to the console
+
             println("Error fetching featured products: ${e.message}")
             emptyList()
         }
