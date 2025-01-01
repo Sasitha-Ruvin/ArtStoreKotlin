@@ -55,9 +55,11 @@ import com.example.valyrianvisions.CommonComps.ScreenWithTopBarAndBottomNav
 import com.example.valyrianvisions.CommonComps.SearchBar
 import com.example.valyrianvisions.CommonComps.ProdcutCards.SwipeableEventSlideshow
 import com.example.valyrianvisions.CommonComps.SectionsText
+import com.example.valyrianvisions.ProductList
 import com.example.valyrianvisions.ViewModels.FeaturedProductViewModel
 import com.example.valyrianvisions.ViewModels.ForYouProductsViewModel
 import com.example.valyrianvisions.ViewModels.LatestProductsViewModel
+import com.example.valyrianvisions.ViewModels.ProductViewModel
 import com.example.valyrianvisions.ViewModels.WishListViewModel
 import com.example.valyrianvisions.data.ArtistSource
 import com.example.valyrianvisions.data.DataSource
@@ -84,6 +86,7 @@ fun HomeScreen(
     var isLoading by remember { mutableStateOf(true) }
 
     val latestProductsViewModel = LatestProductsViewModel();
+    val productViewModel  = ProductViewModel()
     val featuredViewModel = remember { FeaturedProductViewModel() }
     val forYouProductsViewModel = ForYouProductsViewModel(LocalContext.current.applicationContext as Application)
 
@@ -149,7 +152,8 @@ fun HomeScreen(
                                 ForYouProduct(viewModel = forYouProductsViewModel, navController = navController)
                                 Spacer(modifier = Modifier.height(16.dp))
                                 SectionsText("Featured", navigateTo = "products", navController)
-                                FeaturedRow(navController = navController, viewModel = featuredViewModel)
+//                                FeaturedRow(navController = navController, viewModel = featuredViewModel)
+                                ProductList(productViewModel = productViewModel)
 
 
                                 Spacer(modifier = Modifier.height(10.dp))

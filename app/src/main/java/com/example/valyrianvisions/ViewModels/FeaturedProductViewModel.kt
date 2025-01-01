@@ -22,9 +22,9 @@ class FeaturedProductViewModel : ViewModel() {
             try {
                 val products = FirebaseRepository.getFeaturedProducts()
                 _featureProducts.value = products
-                println("Fetched products: $products") // Add logging
+                println("Fetched products: $products")
             } catch (e: Exception) {
-                println("Error in fetchFeaturedProducts: ${e.message}") // Add logging
+                println("Error in fetchFeaturedProducts: ${e.message}")
                 e.printStackTrace()
             }
         }
