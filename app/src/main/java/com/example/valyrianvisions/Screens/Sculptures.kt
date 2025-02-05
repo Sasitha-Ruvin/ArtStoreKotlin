@@ -27,6 +27,7 @@ import com.example.valyrianvisions.CommonComps.ScreenWithTopBarAndBottomNav
 import com.example.valyrianvisions.CommonComps.SearchBar
 import com.example.valyrianvisions.ViewModels.WishListViewModel
 import com.example.valyrianvisions.data.SculptureSource
+import com.example.valyrianvisions.network.ConnectivityStatusBanner
 import kotlinx.coroutines.delay
 
 @Composable
@@ -63,6 +64,7 @@ fun SculpturesScrren(navController: NavController, cartViewModel: CartViewModel,
                     Text(text = "Sculptures",
                         style = MaterialTheme.typography.titleLarge)
                 }
+                ConnectivityStatusBanner()
                 Spacer(modifier = Modifier.height(12.dp))
                 SearchBar(search = search, onSearchChange = { search = it }, modifier = Modifier)
                 Spacer(modifier = Modifier.height(12.dp))

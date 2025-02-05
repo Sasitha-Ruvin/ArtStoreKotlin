@@ -9,7 +9,6 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -22,10 +21,8 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
@@ -49,7 +46,6 @@ import com.example.valyrianvisions.Authentications.AuthState
 import com.example.valyrianvisions.Authentications.AuthViewModel
 import com.example.valyrianvisions.CommonComps.ForYouProduct
 import com.example.valyrianvisions.CommonComps.LatestProductList
-import com.example.valyrianvisions.CommonComps.ProdcutCards.FeaturedRow
 import com.example.valyrianvisions.R
 import com.example.valyrianvisions.CommonComps.ScreenWithTopBarAndBottomNav
 import com.example.valyrianvisions.CommonComps.SearchBar
@@ -62,10 +58,10 @@ import com.example.valyrianvisions.ViewModels.LatestProductsViewModel
 import com.example.valyrianvisions.ViewModels.ProductViewModel
 import com.example.valyrianvisions.ViewModels.WishListViewModel
 import com.example.valyrianvisions.data.ArtistSource
-import com.example.valyrianvisions.data.DataSource
 import com.example.valyrianvisions.data.EventResource
 import com.example.valyrianvisions.model.Artists
 import com.example.valyrianvisions.model.Pictures
+import com.example.valyrianvisions.network.ConnectivityStatusBanner
 import com.example.valyrianvisions.ui.theme.ValyrianVisionsTheme
 import kotlinx.coroutines.delay
 
@@ -127,11 +123,13 @@ fun HomeScreen(
                             .fillMaxSize()
                             .background(MaterialTheme.colorScheme.background)
                             .offset(x = offsetX)
-                            .padding(innerPadding) // Applying innerPadding to respect Scaffold content insets
+                            .padding(innerPadding)
                     ) {
                         Column(
                             modifier = Modifier
                                 .fillMaxSize()
+                                .background(MaterialTheme.colorScheme.background)
+                                .padding(innerPadding)
                         ) {
                             Spacer(modifier = Modifier.height(5.dp))
 
@@ -143,6 +141,7 @@ fun HomeScreen(
                                     .fillMaxWidth()
                                     .padding(bottom = 60.dp)
                             ) {
+                                ConnectivityStatusBanner()
                                 SearchBar(search = search, onSearchChange = { search = it }, modifier = Modifier)
                                 Spacer(modifier = Modifier.height(15.dp))
                                 Slideshow()
@@ -215,73 +214,6 @@ fun ImageWithOverlay() {
     }
 }
 
-////Featured Product section Text
-//@Composable
-//fun FeaturedText(navController: NavController) {
-//    Row(
-//        modifier = Modifier
-//            .fillMaxWidth()
-//            .padding(horizontal = 16.dp),
-//        verticalAlignment = Alignment.CenterVertically
-//    ) {
-//        Text(
-//            text = "Featured",
-//            fontSize = 20.sp,
-//            style = MaterialTheme.typography.bodyMedium.copy(
-//                color = MaterialTheme.colorScheme.onBackground,
-//                fontWeight = FontWeight.Bold
-//            )
-//        )
-//        Spacer(modifier = Modifier.weight(1f))
-//        TextButton(
-//            onClick = { navController.navigate("products") },
-//            modifier = Modifier.align(Alignment.CenterVertically)
-//        ) {
-//            Text(
-//                text = "Show more",
-//                style = MaterialTheme.typography.bodyMedium.copy(
-//                    color = Color.Gray,
-//                    fontWeight = FontWeight.Bold
-//                ),
-//                fontSize = 15.sp
-//            )
-//        }
-//    }
-//}
-//
-//@Composable
-//fun LatestText(navController: NavController){
-//    Row(
-//        modifier = Modifier
-//            .fillMaxWidth()
-//            .padding(horizontal = 16.dp),
-//        verticalAlignment = Alignment.CenterVertically
-//    ){
-//        Text(
-//            text = "Latest",
-//            fontSize = 20.sp,
-//            style = MaterialTheme.typography.bodyMedium.copy(
-//                color = MaterialTheme.colorScheme.onBackground,
-//                fontWeight = FontWeight.Bold
-//            )
-//        )
-//        Spacer(modifier = Modifier.weight(1f))
-//        TextButton(
-//            onClick = { navController.navigate("products") },
-//            modifier = Modifier.align(Alignment.CenterVertically)
-//        ) {
-//            Text(
-//                text = "Show more",
-//                style = MaterialTheme.typography.bodyMedium.copy(
-//                    color = Color.Gray,
-//                    fontWeight = FontWeight.Bold
-//                ),
-//                fontSize = 15.sp
-//            )
-//        }
-//    }
-//
-//}
 
 
 
@@ -460,7 +392,7 @@ fun CategoryButtons(navController: NavController) {
     ) {
         items(listOf("Paintings", "Sketches", "Sculptures")) { category ->
             Button(
-                onClick = { navController.navigate(category.lowercase()) }, // Navigate to category-specific screens
+                onClick = { navController.navigate(category.lowercase()) },
                 modifier = Modifier
                     .height(50.dp),
                 colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.primary)

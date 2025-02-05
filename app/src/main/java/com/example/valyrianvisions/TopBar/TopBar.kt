@@ -36,6 +36,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.valyrianvisions.network.ConnectivityStatusBanner
 import kotlinx.coroutines.launch
 
 @Composable
@@ -48,8 +49,7 @@ fun TopBar(navController: NavController, cartViewModel: CartViewModel, showbackB
         modifier = modifier
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.background)
-            .systemBarsPadding()
-            .padding(horizontal = 10.dp, vertical = 1.dp),
+            .padding(horizontal = 10.dp, vertical = 15.dp),
 
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Start
