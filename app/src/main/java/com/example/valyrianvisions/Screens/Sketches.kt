@@ -32,6 +32,7 @@ import com.example.valyrianvisions.CommonComps.ScreenWithTopBarAndBottomNav
 import com.example.valyrianvisions.CommonComps.SearchBar
 import com.example.valyrianvisions.ViewModels.WishListViewModel
 import com.example.valyrianvisions.data.SketchSource
+import com.example.valyrianvisions.network.ConnectivityStatusBanner
 import kotlinx.coroutines.delay
 
 @Composable
@@ -74,7 +75,7 @@ fun SketchesScreen(navController: NavController, cartViewModel: CartViewModel, w
                         Text(text = "Sketches",
                             style = MaterialTheme.typography.titleLarge)
                     }
-
+                    ConnectivityStatusBanner()
                     Spacer(modifier = Modifier.height(12.dp))
                     SearchBar(search = search, onSearchChange = { search = it }, modifier = Modifier)
                     Spacer(modifier = Modifier.height(12.dp))

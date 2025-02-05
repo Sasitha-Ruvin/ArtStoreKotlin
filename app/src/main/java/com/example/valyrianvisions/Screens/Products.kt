@@ -71,6 +71,7 @@ import com.example.valyrianvisions.model.Paintings
 import com.example.valyrianvisions.model.Pictures
 import com.example.valyrianvisions.model.Sculptures
 import com.example.valyrianvisions.model.Sketch
+import com.example.valyrianvisions.network.ConnectivityStatusBanner
 import kotlinx.coroutines.delay
 
 @Composable
@@ -103,6 +104,7 @@ fun ProductsScreen(navController:NavController, cartViewModel: CartViewModel, wi
                 .offset(x = offsetX)
                 .verticalScroll(rememberScrollState())
             ) {
+                ConnectivityStatusBanner()
                 ProductMainText()
                 Spacer(modifier = Modifier.height(12.dp))
                 Spacer(modifier = Modifier.height(12.dp))
